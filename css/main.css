@@ -1,0 +1,47 @@
+/*
+  Dark: #89D0C9
+  Light: #FFFBD3
+*/
+
+html, body {
+  color: #333333;
+}
+
+.row {
+  margin: 27px auto;
+}
+
+#header-wrapper {
+  background-image: url('/img/symphony.png');
+  margin: 0 0 27px 0;
+  padding: 27px 0;
+}
+
+#header-wrapper #header {
+  margin: 0 auto;
+}
+
+#header-wrapper #header h1 {
+  font-family: 'Pinyon Script', cursive;
+  margin: 0;
+}
+
+#contact .large-4 {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+#contact .large-4 div {
+  margin: 9px 0;
+}
+
+#contact .large-4 div a {
+  color: #333333;
+}
+
+#contact .large-4 img {
+  height: auto;
+  max-height: 16px;
+  max-width: 16px;
+  width: auto;
+}

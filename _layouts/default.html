@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ann Mango Designs</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+
+    {{ content }}
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/underscore.min.js"></script>
+    <script src="js/vendor/instafeed.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script tyle="text/javascript">
+      var feed = new Instafeed({
+        get: 'user',
+        userId: 1613389644,
+        accessToken: '1613389644.467ede5.a1e3bb6fe07e467a98c29d68eaee61b1',
+        template: '',
+        success: function(response) {
+          _.each(response['data'], function(image) {
+            var li  = $('<li></li>');
+            var a   = $('<a></a>').attr('href', image['link']);
+            var img = $('<img/>').attr('src', image['images']['standard_resolution']['url']);
+
+            $('#instafeed').append(li.append(a.append(img)));
+          });
+        },
+        after: function() {
+          $(document).foundation();
+        }
+      });
+      feed.run();
+    </script>
+  </body>
+</html>
