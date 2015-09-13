@@ -13,6 +13,14 @@
 
     {{ content }}
 
+    <div id="footer" class="row">
+      <div class="large-12 columns">
+        <div>
+          &copy; Ann Mango Interiors, Inc.
+        </div>
+      </div>
+    </div>
+
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/underscore.min.js"></script>
     <script src="js/vendor/instafeed.min.js"></script>
@@ -29,9 +37,14 @@
             var li  = $('<li></li>');
             var a   = $('<a></a>').attr('href', image['link']);
             var img = $('<img/>').attr('src', image['images']['standard_resolution']['url']);
-            var div = $('<div/>').text((image['caption'] ? image['caption']['text'] : ''));
 
-            $('#instafeed').append(li.append(a.append(img)).append(div));
+            var div = $('<div/>').html('&nbsp;');
+
+            if(image['caption']) {
+              div = $('<div/>').text(image['caption']['text']);
+            }
+
+            $('#instafeed').append(li.append(div).append(a.append(img)));
           });
         },
         after: function() {

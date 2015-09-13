@@ -54,5 +54,14 @@ html, body {
 }
 
 #gallery #instafeed li div {
+  font-family: 'Pinyon Script', cursive;
+  font-size: 22px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#footer div div {
+  font-size: 14px;
+  margin-bottom: 18px;
   text-align: center;
 }
