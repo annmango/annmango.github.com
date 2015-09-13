@@ -22,14 +22,16 @@
         get: 'user',
         userId: 1613389644,
         accessToken: '1613389644.467ede5.a1e3bb6fe07e467a98c29d68eaee61b1',
+        limit: 60,
         template: '',
         success: function(response) {
-          _.each(response['data'], function(image) {
+          _.each(response['data'].reverse(), function(image) {
             var li  = $('<li></li>');
             var a   = $('<a></a>').attr('href', image['link']);
             var img = $('<img/>').attr('src', image['images']['standard_resolution']['url']);
+            var div = $('<div/>').text((image['caption'] ? image['caption']['text'] : ''));
 
-            $('#instafeed').append(li.append(a.append(img)));
+            $('#instafeed').append(li.append(a.append(img)).append(div));
           });
         },
         after: function() {

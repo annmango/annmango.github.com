@@ -52,3 +52,7 @@ html, body {
   max-width: 16px;
   width: auto;
 }
+
+#gallery #instafeed li div {
+  text-align: center;
+}
